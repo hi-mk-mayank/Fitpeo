@@ -12,7 +12,7 @@ import org.testng.Assert;
 public class PageWorking {
 	WebDriver driver;
 
-		public void setUpTheBrowserAndLaunchTheHomePage() {
+	public void setUpTheBrowserAndLaunchTheHomePage() {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://fitpeo.com/");
