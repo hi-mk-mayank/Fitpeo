@@ -1,5 +1,7 @@
 package com.fitpeo.stepDef;
 
+import java.io.IOException;
+
 import com.fitpeo.Pages.PageWorking;
 
 import io.cucumber.java.After;
@@ -11,43 +13,38 @@ public class StepDefinition {
 
 	PageWorking pw = new PageWorking();
 
-	@Given("Loading the home page")
-	public void loading_the_home_page() {
+	@Given("Load Fitpeo home page")
+	public void load_fitpeo_home_page() throws IOException {
 		pw.setUpTheBrowserAndLaunchTheHomePage();
 	}
 
-	@Given("Navigation to the reveneue page")
-	public void navigation_to_the_reveneue_page() {
+	@Given("Navigate to revenue calculation page")
+	public void navigate_to_revenue_calculation_page() throws IOException {
 		pw.navigateToRevenueCalculatorPage();
-
 	}
 
-	@When("Scroll down to the slider bar")
-	public void scroll_down_to_the_slider_bar() throws InterruptedException {
+	@When("Scroll down to slider section")
+	public void scroll_down_to_slider_section() throws InterruptedException, IOException {
 		pw.navigateToSlider();
-
 	}
 
-	@Then("Validate the slider movement to impact the test box")
-	public void validate_the_slider_movement_to_impact_the_test_box() throws InterruptedException {
+	@Then("Validate slider movement is reflecting in the text box")
+	public void validate_slider_movement_is_reflecting_in_the_text_box() throws IOException {
 		pw.adjustTheSlider();
-
 	}
 
-	@Then("Validate the text box value update impact the slider")
-	public void validate_the_text_box_value_update_impact_the_slider() throws InterruptedException {
+	@Then("Validate text box value is udpating the slider width")
+	public void validate_text_box_value_is_udpating_the_slider_width() throws IOException {
 		pw.enterValueInInputBox();
-
 	}
 
-	@Then("Move to the CPT Selection and check CPT checkboxes we want")
-	public void move_to_the_cpt_selection_and_check_cpt_checkboxes_we_want() throws InterruptedException {
+	@Then("Move to CPT Selection and check CPT checkboxes")
+	public void move_to_cpt_selection_and_check_cpt_checkboxes() throws IOException {
 		pw.cptCode();
 	}
 
-	@Then("Validate the TotalRecurring Reimbursment and it value")
-	public void validate_the_total_recurring_reimbursment_and_it_value() throws InterruptedException {
-
+	@Then("Validate the TotalRecurring Reimbursment value")
+	public void validate_the_total_recurring_reimbursment_value() throws IOException {
 		pw.totalRecussingReimbursementForAllPatientsPerMonth();
 	}
 
